@@ -1,4 +1,4 @@
-\# 🗃️ History Table Generator
+# 🗃️ History Table Generator
 
 
 
@@ -6,27 +6,27 @@
 
 
 
-!\[Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 
-!\[License](https://img.shields.io/badge/License-MIT-green)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-!\[PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supported-blue)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supported-blue)
 
-!\[MySQL](https://img.shields.io/badge/MySQL-Supported-orange)
+![MySQL](https://img.shields.io/badge/MySQL-Supported-orange)
 
-!\[Rich](https://img.shields.io/badge/UI-Rich%20Terminal-ff69b4)
-
-
-
-\*\*Automated History Table \& Trigger Management System\*\*
+![Rich](https://img.shields.io/badge/UI-Rich%20Terminal-ff69b4)
 
 
 
-\[!\[License](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)](LICENSE)
+**Automated History Table & Trigger Management System**
 
-\[!\[Python Version](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge)](https://python.org)
 
-\[!\[Code Style](https://img.shields.io/badge/Code%20Style-Black-black?style=for-the-badge)](https://github.com/psf/black)
+
+[![License](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)](LICENSE)
+
+[![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge)](https://python.org)
+
+[![Code Style](https://img.shields.io/badge/Code%20Style-Black-black?style=for-the-badge)](https://github.com/psf/black)
 
 
 
@@ -34,85 +34,85 @@
 
 
 
-\## ✨ Overview
+## ✨ Overview
 
 
 
-\*\*History Table Generator\*\* is a sophisticated, production-grade tool that automates the creation of audit trails for your database tables. Never lose track of data changes again! With an elegant terminal interface powered by Rich, this tool automatically generates history tables with comprehensive triggers for UPDATE and DELETE operations, complete with metadata about who changed what and when.
+**History Table Generator** is a sophisticated, production-grade tool that automates the creation of audit trails for your database tables. Never lose track of data changes again! With an elegant terminal interface powered by Rich, this tool automatically generates history tables with comprehensive triggers for UPDATE and DELETE operations, complete with metadata about who changed what and when.
 
 
 
-Think of it as a \*\*time machine for your data\*\* – preserving every change while keeping your application logic clean and simple.
+Think of it as a **time machine for your data** – preserving every change while keeping your application logic clean and simple.
 
 
 
-\## 🚀 Features
+## 🚀 Features
 
 
 
-\### 🎯 \*\*Core Capabilities\*\*
+### 🎯 **Core Capabilities**
 
-\- \*\*Automated History Tables\*\*: Create audit tables with a single command
+- **Automated History Tables**: Create audit tables with a single command
 
-\- \*\*Multi-Database Support\*\*: PostgreSQL, MySQL, SQL Server, and more
+- **Multi-Database Support**: PostgreSQL, MySQL, SQL Server, and more
 
-\- \*\*Smart Triggers\*\*: Automatic trigger generation for UPDATE/DELETE operations
+- **Smart Triggers**: Automatic trigger generation for UPDATE/DELETE operations
 
-\- \*\*Interactive UI\*\*: Beautiful terminal interface with pagination and navigation
+- **Interactive UI**: Beautiful terminal interface with pagination and navigation
 
-\- \*\*Transaction Safe\*\*: Rollback support and preview before applying
-
-
-
-\### 🛡️ \*\*Safety First\*\*
-
-\- \*\*Preview Mode\*\*: See exactly what will be created before making changes
-
-\- \*\*Auto-Backup\*\*: Automatic backups before any modifications
-
-\- \*\*Transaction Management\*\*: Full ACID compliance with rollback capability
-
-\- \*\*Validation\*\*: Comprehensive validation of all operations
+- **Transaction Safe**: Rollback support and preview before applying
 
 
 
-\### 🎨 \*\*User Experience\*\*
+### 🛡️ **Safety First**
 
-\- \*\*Rich Terminal UI\*\*: Colorful, interactive interface with progress bars
+- **Preview Mode**: See exactly what will be created before making changes
 
-\- \*\*Intuitive Navigation\*\*: Move freely between options with keyboard
+- **Auto-Backup**: Automatic backups before any modifications
 
-\- \*\*Pagination\*\*: Handle large databases with ease
+- **Transaction Management**: Full ACID compliance with rollback capability
 
-\- \*\*Real-time Feedback\*\*: Immediate feedback on all operations
-
-
-
-\## 📋 Prerequisites
+- **Validation**: Comprehensive validation of all operations
 
 
 
-\- Python 3.8 or higher
+### 🎨 **User Experience**
 
-\- Database server (PostgreSQL, MySQL, etc.)
+- **Rich Terminal UI**: Colorful, interactive interface with progress bars
 
-\- Required permissions to create tables and triggers
+- **Intuitive Navigation**: Move freely between options with keyboard
 
-\- 100MB free disk space
+- **Pagination**: Handle large databases with ease
 
-
-
-\## 🔧 Installation
+- **Real-time Feedback**: Immediate feedback on all operations
 
 
 
-\### Quick Install (Recommended)
+## 📋 Prerequisites
+
+
+
+- Python 3.8 or higher
+
+- Database server (PostgreSQL, MySQL, etc.)
+
+- Required permissions to create tables and triggers
+
+- 100MB free disk space
+
+
+
+## 🔧 Installation
+
+
+
+### Quick Install (Recommended)
 
 
 
 ```bash
 
-\# Clone the repository
+# Clone the repository
 
 git clone https://github.com/yourusername/history-table-generator.git
 
@@ -120,25 +120,25 @@ cd history-table-generator
 
 
 
-\# Create virtual environment
+# Create virtual environment
 
 python -m venv venv
 
 
 
-\# Activate virtual environment
+# Activate virtual environment
 
-\# On Windows:
+# On Windows:
 
-venv\\Scripts\\activate
+venvScriptsactivate
 
-\# On macOS/Linux:
+# On macOS/Linux:
 
 source venv/bin/activate
 
 
 
-\# Install dependencies
+# Install dependencies
 
 pip install -r requirements.txt
 
@@ -146,13 +146,13 @@ pip install -r requirements.txt
 
 
 
-\### Docker Installation
+### Docker Installation
 
 
 
 ```bash
 
-\# Build and run with Docker
+# Build and run with Docker
 
 docker build -t history-generator .
 
@@ -162,7 +162,7 @@ docker run -it --rm history-generator
 
 
 
-\## ⚙️ Configuration
+## ⚙️ Configuration
 
 
 
@@ -178,35 +178,35 @@ app:
 
 &nbsp; # History table naming convention
 
-&nbsp; history\_suffix: "\_hst"           # Suffix for history tables
+&nbsp; history_suffix: "_hst"           # Suffix for history tables
 
-&nbsp; timestamp\_column: "history\_timestamp"  # Column for change timestamp
+&nbsp; timestamp_column: "history_timestamp"  # Column for change timestamp
 
-&nbsp; operation\_column: "history\_operation"  # Column for operation type
+&nbsp; operation_column: "history_operation"  # Column for operation type
 
-&nbsp; user\_column: "history\_user"      # Column for user who made change
+&nbsp; user_column: "history_user"      # Column for user who made change
 
 &nbsp; 
 
 &nbsp; # Behavior settings
 
-&nbsp; include\_system\_tables: false     # Include system/internal tables
+&nbsp; include_system_tables: false     # Include system/internal tables
 
-&nbsp; include\_views: false             # Include database views
+&nbsp; include_views: false             # Include database views
 
-&nbsp; auto\_commit: false               # Auto-commit changes (false for safety)
+&nbsp; auto_commit: false               # Auto-commit changes (false for safety)
 
-&nbsp; backup\_before\_changes: true      # Create backup before modifications
+&nbsp; backup_before_changes: true      # Create backup before modifications
 
-&nbsp; default\_schema: "public"         # Default schema to use
+&nbsp; default_schema: "public"         # Default schema to use
 
 &nbsp; 
 
 &nbsp; # Performance settings
 
-&nbsp; max\_retries: 3                   # Max retries for failed operations
+&nbsp; max_retries: 3                   # Max retries for failed operations
 
-&nbsp; retry\_delay: 2                   # Delay between retries (seconds)
+&nbsp; retry_delay: 2                   # Delay between retries (seconds)
 
 
 
@@ -222,7 +222,7 @@ database:
 
 &nbsp; timeout: 30                     # Connection timeout in seconds
 
-&nbsp; pool\_size: 5                    # Connection pool size
+&nbsp; pool_size: 5                    # Connection pool size
 
 
 
@@ -230,11 +230,11 @@ logging:
 
 &nbsp; level: "INFO"                   # DEBUG, INFO, WARNING, ERROR
 
-&nbsp; file: "logs/history\_generator.log"  # Log file location
+&nbsp; file: "logs/history_generator.log"  # Log file location
 
-&nbsp; max\_size\_mb: 10                 # Max log file size
+&nbsp; max_size_mb: 10                 # Max log file size
 
-&nbsp; backup\_count: 5                 # Number of backup logs to keep
+&nbsp; backup_count: 5                 # Number of backup logs to keep
 
 &nbsp; format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
@@ -246,15 +246,15 @@ logging:
 
 
 
-\## 🎮 Usage
+## 🎮 Usage
 
 
 
-\### First-Time Setup
+### First-Time Setup
 
 
 
-1\. \*\*Start the application\*\*:
+1. **Start the application**:
 
 &nbsp;  ```bash
 
@@ -264,7 +264,7 @@ logging:
 
 
 
-2\. \*\*Configure database connection\*\*:
+2. **Configure database connection**:
 
 &nbsp;  - Select your database type (PostgreSQL, MySQL, etc.)
 
@@ -274,7 +274,7 @@ logging:
 
 
 
-3\. \*\*Select database and schema\*\*:
+3. **Select database and schema**:
 
 &nbsp;  - Browse available databases with pagination
 
@@ -284,7 +284,7 @@ logging:
 
 
 
-\### Main Workflow
+### Main Workflow
 
 
 
@@ -294,7 +294,7 @@ logging:
 
 
 
-\*\*Use this to see what will be created without making changes:\*\*
+**Use this to see what will be created without making changes:**
 
 
 
@@ -344,7 +344,7 @@ logging:
 
 
 
-\*\*Apply history tables and triggers to selected tables:\*\*
+**Apply history tables and triggers to selected tables:**
 
 
 
@@ -404,7 +404,7 @@ logging:
 
 
 
-\*\*Undo previously applied changes:\*\*
+**Undo previously applied changes:**
 
 
 
@@ -454,7 +454,7 @@ logging:
 
 
 
-\## 📁 Project Structure
+## 📁 Project Structure
 
 
 
@@ -466,7 +466,7 @@ logging:
 
 ```
 
-history\_table\_generator/
+history_table_generator/
 
 │
 
@@ -480,7 +480,7 @@ history\_table\_generator/
 
 ├── config/                          # Configuration management
 
-│   ├── \_\_init\_\_.py
+│   ├── __init__.py
 
 │   ├── settings.py                  # Config classes and managers
 
@@ -490,21 +490,21 @@ history\_table\_generator/
 
 ├── core/                            # Business logic core
 
-│   ├── \_\_init\_\_.py
+│   ├── __init__.py
 
 │   ├── database.py                  # Database abstraction layer
 
-│   ├── history\_manager.py           # Main history table logic
+│   ├── history_manager.py           # Main history table logic
 
-│   └── trigger\_generator.py         # Database-specific SQL generation
+│   └── trigger_generator.py         # Database-specific SQL generation
 
 │
 
 ├── ui/                              # User interface
 
-│   ├── \_\_init\_\_.py
+│   ├── __init__.py
 
-│   ├── console\_ui.py                # Main UI controller
+│   ├── console_ui.py                # Main UI controller
 
 │   └── components.py                # Reusable UI components
 
@@ -512,7 +512,7 @@ history\_table\_generator/
 
 ├── utils/                           # Utilities and helpers
 
-│   ├── \_\_init\_\_.py
+│   ├── __init__.py
 
 │   ├── logger.py                    # Logging configuration
 
@@ -524,19 +524,19 @@ history\_table\_generator/
 
 ├── models/                          # Data models
 
-│   ├── \_\_init\_\_.py
+│   ├── __init__.py
 
-│   └── database\_models.py           # Database schema models
+│   └── database_models.py           # Database schema models
 
 │
 
 ├── scripts/                         # Utility scripts
 
-│   ├── sample\_config.yaml           # Example configuration
+│   ├── sample_config.yaml           # Example configuration
 
-│   ├── backup\_cleanup.py            # Backup management
+│   ├── backup_cleanup.py            # Backup management
 
-│   └── health\_check.py              # System health checks
+│   └── health_check.py              # System health checks
 
 │
 
@@ -554,13 +554,13 @@ history\_table\_generator/
 
 └── tests/                           # Test suite
 
-&nbsp;   ├── \_\_init\_\_.py
+&nbsp;   ├── __init__.py
 
-&nbsp;   ├── test\_database.py
+&nbsp;   ├── test_database.py
 
-&nbsp;   ├── test\_history\_manager.py
+&nbsp;   ├── test_history_manager.py
 
-&nbsp;   └── test\_ui.py
+&nbsp;   └── test_ui.py
 
 ```
 
@@ -570,11 +570,11 @@ history\_table\_generator/
 
 
 
-\## 🎨 User Interface Guide
+## 🎨 User Interface Guide
 
 
 
-\### Navigation Controls
+### Navigation Controls
 
 
 
@@ -624,11 +624,11 @@ history\_table\_generator/
 
 
 
-\## 🔍 What Gets Created?
+## 🔍 What Gets Created?
 
 
 
-\### History Table Structure
+### History Table Structure
 
 
 
@@ -658,7 +658,7 @@ CREATE TABLE employees (
 
 &nbsp;   salary DECIMAL(10,2),
 
-&nbsp;   created\_at TIMESTAMP DEFAULT CURRENT\_TIMESTAMP
+&nbsp;   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 );
 
@@ -680,7 +680,7 @@ CREATE TABLE employees (
 
 -- Generated history table
 
-CREATE TABLE employees\_hst (
+CREATE TABLE employees_hst (
 
 &nbsp;   -- All original columns preserved
 
@@ -694,23 +694,23 @@ CREATE TABLE employees\_hst (
 
 &nbsp;   salary DECIMAL(10,2),
 
-&nbsp;   created\_at TIMESTAMP,
+&nbsp;   created_at TIMESTAMP,
 
 &nbsp;   
 
 &nbsp;   -- Added history metadata
 
-&nbsp;   history\_timestamp TIMESTAMP DEFAULT CURRENT\_TIMESTAMP,
+&nbsp;   history_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-&nbsp;   history\_operation VARCHAR(10),  -- 'UPDATE' or 'DELETE'
+&nbsp;   history_operation VARCHAR(10),  -- 'UPDATE' or 'DELETE'
 
-&nbsp;   history\_user VARCHAR(100),      -- User who made the change
+&nbsp;   history_user VARCHAR(100),      -- User who made the change
 
 &nbsp;   
 
 &nbsp;   -- Composite primary key
 
-&nbsp;   PRIMARY KEY (id, history\_timestamp)
+&nbsp;   PRIMARY KEY (id, history_timestamp)
 
 );
 
@@ -718,9 +718,9 @@ CREATE TABLE employees\_hst (
 
 -- Index for faster queries
 
-CREATE INDEX idx\_employees\_hst\_timestamp ON employees\_hst(history\_timestamp);
+CREATE INDEX idx_employees_hst_timestamp ON employees_hst(history_timestamp);
 
-CREATE INDEX idx\_employees\_hst\_operation ON employees\_hst(history\_operation);
+CREATE INDEX idx_employees_hst_operation ON employees_hst(history_operation);
 
 ```
 
@@ -740,37 +740,37 @@ CREATE INDEX idx\_employees\_hst\_operation ON employees\_hst(history\_operation
 
 -- Trigger function (PostgreSQL example)
 
-CREATE OR REPLACE FUNCTION employees\_history\_trigger()
+CREATE OR REPLACE FUNCTION employees_history_trigger()
 
 RETURNS TRIGGER AS $$
 
 BEGIN
 
-&nbsp;   IF (TG\_OP = 'DELETE') THEN
+&nbsp;   IF (TG_OP = 'DELETE') THEN
 
-&nbsp;       INSERT INTO employees\_hst
+&nbsp;       INSERT INTO employees_hst
 
-&nbsp;       SELECT OLD.\*, 
+&nbsp;       SELECT OLD.*, 
 
-&nbsp;              CURRENT\_TIMESTAMP, 
+&nbsp;              CURRENT_TIMESTAMP, 
 
 &nbsp;              'DELETE', 
 
-&nbsp;              CURRENT\_USER;
+&nbsp;              CURRENT_USER;
 
 &nbsp;       RETURN OLD;
 
-&nbsp;   ELSIF (TG\_OP = 'UPDATE') THEN
+&nbsp;   ELSIF (TG_OP = 'UPDATE') THEN
 
-&nbsp;       INSERT INTO employees\_hst
+&nbsp;       INSERT INTO employees_hst
 
-&nbsp;       SELECT OLD.\*, 
+&nbsp;       SELECT OLD.*, 
 
-&nbsp;              CURRENT\_TIMESTAMP, 
+&nbsp;              CURRENT_TIMESTAMP, 
 
 &nbsp;              'UPDATE', 
 
-&nbsp;              CURRENT\_USER;
+&nbsp;              CURRENT_USER;
 
 &nbsp;       RETURN NEW;
 
@@ -786,13 +786,13 @@ $$ LANGUAGE plpgsql;
 
 -- Attach trigger to original table
 
-CREATE TRIGGER employees\_history\_trigger
+CREATE TRIGGER employees_history_trigger
 
 AFTER UPDATE OR DELETE ON employees
 
 FOR EACH ROW
 
-EXECUTE FUNCTION employees\_history\_trigger();
+EXECUTE FUNCTION employees_history_trigger();
 
 ```
 
@@ -802,7 +802,7 @@ EXECUTE FUNCTION employees\_history\_trigger();
 
 
 
-\## 📊 Querying History Data
+## 📊 Querying History Data
 
 
 
@@ -814,23 +814,23 @@ After setup, you can query historical data like:
 
 -- Get all changes for employee ID 123
 
-SELECT \* FROM employees\_hst 
+SELECT * FROM employees_hst 
 
 WHERE id = 123 
 
-ORDER BY history\_timestamp DESC;
+ORDER BY history_timestamp DESC;
 
 
 
 -- See who changed salaries
 
-SELECT history\_timestamp, history\_user, salary 
+SELECT history_timestamp, history_user, salary 
 
-FROM employees\_hst 
+FROM employees_hst 
 
-WHERE history\_operation = 'UPDATE' 
+WHERE history_operation = 'UPDATE' 
 
-ORDER BY history\_timestamp DESC;
+ORDER BY history_timestamp DESC;
 
 
 
@@ -838,13 +838,13 @@ ORDER BY history\_timestamp DESC;
 
 INSERT INTO employees 
 
-SELECT id, name, email, department, salary, created\_at 
+SELECT id, name, email, department, salary, created_at 
 
-FROM employees\_hst 
+FROM employees_hst 
 
-WHERE id = 456 AND history\_operation = 'DELETE' 
+WHERE id = 456 AND history_operation = 'DELETE' 
 
-ORDER BY history\_timestamp DESC 
+ORDER BY history_timestamp DESC 
 
 LIMIT 1;
 
@@ -852,7 +852,7 @@ LIMIT 1;
 
 
 
-\## 🧪 Testing
+## 🧪 Testing
 
 
 
@@ -862,37 +862,37 @@ Run the test suite to ensure everything works:
 
 ```bash
 
-\# Run all tests
+# Run all tests
 
 python -m pytest tests/
 
 
 
-\# Run with coverage
+# Run with coverage
 
-python -m pytest --cov=history\_table\_generator tests/
+python -m pytest --cov=history_table_generator tests/
 
 
 
-\# Run specific test module
+# Run specific test module
 
-python -m pytest tests/test\_database.py -v
+python -m pytest tests/test_database.py -v
 
 ```
 
 
 
-\## 🐳 Docker Support
+## 🐳 Docker Support
 
 
 
-\### Quick Start with Docker Compose
+### Quick Start with Docker Compose
 
 
 
 ```yaml
 
-\# docker-compose.yml
+# docker-compose.yml
 
 version: '3.8'
 
@@ -904,11 +904,11 @@ services:
 
 &nbsp;   environment:
 
-&nbsp;     - DB\_HOST=postgres
+&nbsp;     - DB_HOST=postgres
 
-&nbsp;     - DB\_PORT=5432
+&nbsp;     - DB_PORT=5432
 
-&nbsp;   depends\_on:
+&nbsp;   depends_on:
 
 &nbsp;     - postgres
 
@@ -928,17 +928,17 @@ services:
 
 &nbsp;   environment:
 
-&nbsp;     POSTGRES\_PASSWORD: example
+&nbsp;     POSTGRES_PASSWORD: example
 
 &nbsp;   volumes:
 
-&nbsp;     - postgres\_data:/var/lib/postgresql/data
+&nbsp;     - postgres_data:/var/lib/postgresql/data
 
 
 
 volumes:
 
-&nbsp; postgres\_data:
+&nbsp; postgres_data:
 
 ```
 
@@ -954,43 +954,43 @@ docker-compose up
 
 
 
-\## 🚀 Performance Considerations
+## 🚀 Performance Considerations
 
 
 
-\### For Large Databases
+### For Large Databases
 
-1\. \*\*Batch Processing\*\*: The tool processes tables in batches
+1. **Batch Processing**: The tool processes tables in batches
 
-2\. \*\*Index Optimization\*\*: Automatic index creation on history columns
+2. **Index Optimization**: Automatic index creation on history columns
 
-3\. \*\*Memory Efficient\*\*: Streamlined operations to minimize memory usage
+3. **Memory Efficient**: Streamlined operations to minimize memory usage
 
-4\. \*\*Connection Pooling\*\*: Reuses database connections
-
-
-
-\### Recommended Practices
-
-\- Apply to high-activity tables during maintenance windows
-
-\- Consider partitioning for very large history tables
-
-\- Regularly archive old history data
-
-\- Monitor disk space for history tables
+4. **Connection Pooling**: Reuses database connections
 
 
 
-\## 🛠️ Extending the Tool
+### Recommended Practices
+
+- Apply to high-activity tables during maintenance windows
+
+- Consider partitioning for very large history tables
+
+- Regularly archive old history data
+
+- Monitor disk space for history tables
 
 
 
-\### Adding New Database Support
+## 🛠️ Extending the Tool
 
 
 
-1\. Create a new database class in `core/database.py`:
+### Adding New Database Support
+
+
+
+1. Create a new database class in `core/database.py`:
 
 ```python
 
@@ -1002,7 +1002,7 @@ class NewDatabase(BaseDatabase):
 
 &nbsp;   
 
-&nbsp;   def get\_tables(self, schema):
+&nbsp;   def get_tables(self, schema):
 
 &nbsp;       # Implementation
 
@@ -1010,13 +1010,13 @@ class NewDatabase(BaseDatabase):
 
 
 
-2\. Add trigger generator in `core/trigger\_generator.py`:
+2. Add trigger generator in `core/trigger_generator.py`:
 
 ```python
 
 class NewDBTriggerGenerator(BaseTriggerGenerator):
 
-&nbsp;   def generate\_history\_table\_ddl(self):
+&nbsp;   def generate_history_table_ddl(self):
 
 &nbsp;       # Database-specific DDL
 
@@ -1024,13 +1024,13 @@ class NewDBTriggerGenerator(BaseTriggerGenerator):
 
 
 
-3\. Register in factories:
+3. Register in factories:
 
 ```python
 
-\# In DatabaseFactory
+# In DatabaseFactory
 
-if db\_type == 'newdb':
+if db_type == 'newdb':
 
 &nbsp;   return NewDatabase(config, ui)
 
@@ -1038,7 +1038,7 @@ if db\_type == 'newdb':
 
 
 
-\## 🤝 Contributing
+## 🤝 Contributing
 
 
 
@@ -1046,35 +1046,35 @@ We love contributions! Here's how to help:
 
 
 
-1\. \*\*Fork\*\* the repository
+1. **Fork** the repository
 
-2\. \*\*Create a feature branch\*\*: `git checkout -b feature/amazing-feature`
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
 
-3\. \*\*Commit your changes\*\*: `git commit -m 'Add amazing feature'`
+3. **Commit your changes**: `git commit -m 'Add amazing feature'`
 
-4\. \*\*Push to branch\*\*: `git push origin feature/amazing-feature`
+4. **Push to branch**: `git push origin feature/amazing-feature`
 
-5\. \*\*Open a Pull Request\*\*
+5. **Open a Pull Request**
 
 
 
-\### Development Setup
+### Development Setup
 
 ```bash
 
-\# Install development dependencies
+# Install development dependencies
 
 pip install -r requirements-dev.txt
 
 
 
-\# Install pre-commit hooks
+# Install pre-commit hooks
 
 pre-commit install
 
 
 
-\# Run code quality checks
+# Run code quality checks
 
 black .
 
@@ -1086,35 +1086,35 @@ mypy .
 
 
 
-\## 📈 Roadmap
+## 📈 Roadmap
 
 
 
-\- \[x] PostgreSQL support
+- [x] PostgreSQL support
 
-\- \[x] MySQL support
+- [x] MySQL support
 
-\- \[ ] SQL Server support
+- [ ] SQL Server support
 
-\- \[ ] Oracle Database support
+- [ ] Oracle Database support
 
-\- \[ ] SQLite support
+- [ ] SQLite support
 
-\- \[ ] Web interface (FastAPI)
+- [ ] Web interface (FastAPI)
 
-\- \[ ] Scheduled backups
+- [ ] Scheduled backups
 
-\- \[ ] Data retention policies
+- [ ] Data retention policies
 
-\- \[ ] Change data capture (CDC)
+- [ ] Change data capture (CDC)
 
-\- \[ ] Real-time notifications
+- [ ] Real-time notifications
 
-\- \[ ] API for programmatic access
+- [ ] API for programmatic access
 
 
 
-\## 🆘 Troubleshooting
+## 🆘 Troubleshooting
 
 
 
@@ -1124,61 +1124,61 @@ mypy .
 
 
 
-\### Connection Issues
+### Connection Issues
 
-\*\*Problem\*\*: Can't connect to database
+**Problem**: Can't connect to database
 
-\*\*Solution\*\*:
+**Solution**:
 
-\- Check if database server is running
+- Check if database server is running
 
-\- Verify credentials
+- Verify credentials
 
-\- Check firewall settings
+- Check firewall settings
 
-\- Ensure SSL is properly configured if required
-
-
-
-\### Permission Errors
-
-\*\*Problem\*\*: "Permission denied" when creating tables
-
-\*\*Solution\*\*:
-
-\- Ensure user has CREATE TABLE privilege
-
-\- Check schema permissions
-
-\- Try connecting as superuser for initial setup
+- Ensure SSL is properly configured if required
 
 
 
-\### Trigger Creation Fails
+### Permission Errors
 
-\*\*Problem\*\*: Triggers not being created
+**Problem**: "Permission denied" when creating tables
 
-\*\*Solution\*\*:
+**Solution**:
 
-\- Check if user has TRIGGER privilege
+- Ensure user has CREATE TABLE privilege
 
-\- Verify trigger function language is installed (plpgsql for PostgreSQL)
+- Check schema permissions
 
-\- Check for naming conflicts
+- Try connecting as superuser for initial setup
 
 
 
-\### Performance Issues
+### Trigger Creation Fails
 
-\*\*Problem\*\*: Application is slow with many tables
+**Problem**: Triggers not being created
 
-\*\*Solution\*\*:
+**Solution**:
 
-\- Increase connection pool size in config
+- Check if user has TRIGGER privilege
 
-\- Process tables in smaller batches
+- Verify trigger function language is installed (plpgsql for PostgreSQL)
 
-\- Consider running during off-peak hours
+- Check for naming conflicts
+
+
+
+### Performance Issues
+
+**Problem**: Application is slow with many tables
+
+**Solution**:
+
+- Increase connection pool size in config
+
+- Process tables in smaller batches
+
+- Consider running during off-peak hours
 
 
 
@@ -1186,49 +1186,49 @@ mypy .
 
 
 
-\## 📚 Documentation
+## 📚 Documentation
 
 
 
-\- \[API Documentation](docs/api.md) - Complete API reference
+- [API Documentation](docs/api.md) - Complete API reference
 
-\- \[Database Guides](docs/databases/) - Database-specific guides
+- [Database Guides](docs/databases/) - Database-specific guides
 
-\- \[Best Practices](docs/best-practices.md) - Implementation recommendations
+- [Best Practices](docs/best-practices.md) - Implementation recommendations
 
-\- \[Migration Guide](docs/migration.md) - Upgrading between versions
-
-
-
-\## 👥 Authors
+- [Migration Guide](docs/migration.md) - Upgrading between versions
 
 
 
-\- \*\*Your Name\*\* - \*Initial work\* - \[@yourusername](https://github.com/yourusername)
-
-\- \*\*Contributors\*\* - \[See contributors](https://github.com/yourusername/history-table-generator/graphs/contributors)
+## 👥 Authors
 
 
 
-\## 📄 License
+- **Your Name** - *Initial work* - [@yourusername](https://github.com/yourusername)
+
+- **Contributors** - [See contributors](https://github.com/yourusername/history-table-generator/graphs/contributors)
 
 
 
-This project is licensed under the MIT License - see the \[LICENSE](LICENSE) file for details.
+## 📄 License
 
 
 
-\## 🙏 Acknowledgments
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
 
-\- \[Rich](https://github.com/Textualize/rich) for beautiful terminal output
+## 🙏 Acknowledgments
 
-\- \[SQLAlchemy](https://www.sqlalchemy.org/) for database abstraction
 
-\- \[Inquirer](https://github.com/magmax/python-inquirer) for interactive prompts
 
-\- All our contributors and users
+- [Rich](https://github.com/Textualize/rich) for beautiful terminal output
+
+- [SQLAlchemy](https://www.sqlalchemy.org/) for database abstraction
+
+- [Inquirer](https://github.com/magmax/python-inquirer) for interactive prompts
+
+- All our contributors and users
 
 
 
@@ -1240,15 +1240,15 @@ This project is licensed under the MIT License - see the \[LICENSE](LICENSE) fil
 
 
 
-\### ⭐ Found this useful? Give us a star on GitHub!
+### ⭐ Found this useful? Give us a star on GitHub!
 
 
 
-\[!\[Star History Chart](https://api.star-history.com/svg?repos=yourusername/history-table-generator\&type=Date)](https://star-history.com/#yourusername/history-table-generator\&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/history-table-generator&type=Date)](https://star-history.com/#yourusername/history-table-generator&Date)
 
 
 
-\*\*"The palest ink is better than the best memory."\*\* - Chinese Proverb
+**"The palest ink is better than the best memory."** - Chinese Proverb
 
 
 
