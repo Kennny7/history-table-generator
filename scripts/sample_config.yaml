@@ -1,0 +1,26 @@
+app:
+  history_suffix: "_hst"
+  timestamp_column: "history_timestamp"
+  operation_column: "history_operation"
+  user_column: "history_user"
+  include_system_tables: false
+  include_views: false
+  auto_commit: false
+  backup_before_changes: true
+  default_schema: "public"
+  max_retries: 3
+  retry_delay: 2
+
+database:
+  type: "postgresql"
+  host: "localhost"
+  port: 5432
+  timeout: 30
+  pool_size: 5
+
+logging:
+  level: "INFO"
+  file: "logs/history_generator.log"
+  max_size_mb: 10
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
