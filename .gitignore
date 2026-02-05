@@ -1,0 +1,31 @@
+============================================================
+[+] .gitignore file
+============================================================
+
+# Python cache / bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Conda environments / virtualenv
+.env/
+.envs/
+*.egg-info/
+
+# Kivy / other app logs
+.kivy/
+*.log
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE specific
+.vscode/
+.idea/
+
+# build / dist folders
+build/
+dist/".buildozer/" 
+"miniconda.sh" 
