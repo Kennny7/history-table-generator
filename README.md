@@ -6,15 +6,7 @@
 
 
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-
-![License](https://img.shields.io/badge/License-MIT-green)
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supported-blue)
-
-![MySQL](https://img.shields.io/badge/MySQL-Supported-orange)
-
-![Rich](https://img.shields.io/badge/UI-Rich%20Terminal-ff69b4)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supported-blue) ![MySQL](https://img.shields.io/badge/MySQL-Supported-orange) ![Rich](https://img.shields.io/badge/UI-Rich%20Terminal-ff69b4)
 
 
 
@@ -22,11 +14,7 @@
 
 
 
-[![License](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)](LICENSE)
-
-[![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge)](https://python.org)
-
-[![Code Style](https://img.shields.io/badge/Code%20Style-Black-black?style=for-the-badge)](https://github.com/psf/black)
+[![License](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)](LICENSE) [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge)](https://python.org) [![Code Style](https://img.shields.io/badge/Code%20Style-Black-black?style=for-the-badge)](https://github.com/psf/black)
 
 
 
@@ -114,7 +102,7 @@ Think of it as a **time machine for your data** – preserving every change whil
 
 # Clone the repository
 
-git clone https://github.com/yourusername/history-table-generator.git
+git clone https://github.com/Kennny7/history-table-generator.git
 
 cd history-table-generator
 
@@ -176,67 +164,67 @@ docker run -it --rm history-generator
 
 app:
 
-&nbsp; # History table naming convention
+ # History table naming convention
 
-&nbsp; history_suffix: "_hst"           # Suffix for history tables
+ history_suffix: "_hst"           # Suffix for history tables
 
-&nbsp; timestamp_column: "history_timestamp"  # Column for change timestamp
+ timestamp_column: "history_timestamp"  # Column for change timestamp
 
-&nbsp; operation_column: "history_operation"  # Column for operation type
+ operation_column: "history_operation"  # Column for operation type
 
-&nbsp; user_column: "history_user"      # Column for user who made change
+ user_column: "history_user"      # Column for user who made change
 
-&nbsp; 
+ 
 
-&nbsp; # Behavior settings
+ # Behavior settings
 
-&nbsp; include_system_tables: false     # Include system/internal tables
+ include_system_tables: false     # Include system/internal tables
 
-&nbsp; include_views: false             # Include database views
+ include_views: false             # Include database views
 
-&nbsp; auto_commit: false               # Auto-commit changes (false for safety)
+ auto_commit: false               # Auto-commit changes (false for safety)
 
-&nbsp; backup_before_changes: true      # Create backup before modifications
+ backup_before_changes: true      # Create backup before modifications
 
-&nbsp; default_schema: "public"         # Default schema to use
+ default_schema: "public"         # Default schema to use
 
-&nbsp; 
+ 
 
-&nbsp; # Performance settings
+ # Performance settings
 
-&nbsp; max_retries: 3                   # Max retries for failed operations
+ max_retries: 3                   # Max retries for failed operations
 
-&nbsp; retry_delay: 2                   # Delay between retries (seconds)
+ retry_delay: 2                   # Delay between retries (seconds)
 
 
 
 database:
 
-&nbsp; # Connection settings (can be overridden at runtime)
+ # Connection settings (can be overridden at runtime)
 
-&nbsp; type: "postgresql"              # postgresql, mysql, sqlserver, sqlite
+ type: "postgresql"              # postgresql, mysql, sqlserver, sqlite
 
-&nbsp; host: "localhost"               # Database host
+ host: "localhost"               # Database host
 
-&nbsp; port: 5432                      # Default port for database type
+ port: 5432                      # Default port for database type
 
-&nbsp; timeout: 30                     # Connection timeout in seconds
+ timeout: 30                     # Connection timeout in seconds
 
-&nbsp; pool_size: 5                    # Connection pool size
+ pool_size: 5                    # Connection pool size
 
 
 
 logging:
 
-&nbsp; level: "INFO"                   # DEBUG, INFO, WARNING, ERROR
+ level: "INFO"                   # DEBUG, INFO, WARNING, ERROR
 
-&nbsp; file: "logs/history_generator.log"  # Log file location
+ file: "logs/history_generator.log"  # Log file location
 
-&nbsp; max_size_mb: 10                 # Max log file size
+ max_size_mb: 10                 # Max log file size
 
-&nbsp; backup_count: 5                 # Number of backup logs to keep
+ backup_count: 5                 # Number of backup logs to keep
 
-&nbsp; format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+ format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
 ```
 
@@ -256,31 +244,31 @@ logging:
 
 1. **Start the application**:
 
-&nbsp;  ```bash
+  ```bash
 
-&nbsp;  python main.py
+  python main.py
 
-&nbsp;  ```
+  ```
 
 
 
 2. **Configure database connection**:
 
-&nbsp;  - Select your database type (PostgreSQL, MySQL, etc.)
+  - Select your database type (PostgreSQL, MySQL, etc.)
 
-&nbsp;  - Enter connection details (host, port, credentials)
+  - Enter connection details (host, port, credentials)
 
-&nbsp;  - Test connection immediately
+  - Test connection immediately
 
 
 
 3. **Select database and schema**:
 
-&nbsp;  - Browse available databases with pagination
+  - Browse available databases with pagination
 
-&nbsp;  - Navigate with arrow keys and Enter
+  - Navigate with arrow keys and Enter
 
-&nbsp;  - Select the target schema
+  - Select the target schema
 
 
 
@@ -554,13 +542,13 @@ history_table_generator/
 
 └── tests/                           # Test suite
 
-&nbsp;   ├── __init__.py
+   ├── __init__.py
 
-&nbsp;   ├── test_database.py
+   ├── test_database.py
 
-&nbsp;   ├── test_history_manager.py
+   ├── test_history_manager.py
 
-&nbsp;   └── test_ui.py
+   └── test_ui.py
 
 ```
 
@@ -588,33 +576,33 @@ history_table_generator/
 
 │                                                             │
 
-│  ↑/↓ : Move selection up/down                              │
+│  ↑/↓ : Move selection up/down                               │
 
-│  ←/→ : Previous/Next page (when paginated)                 │
+│  ←/→ : Previous/Next page (when paginated)                  │
 
-│  Enter : Select/Confirm                                    │
+│  Enter : Select/Confirm                                     │
 
-│  Space : Toggle selection (in multi-select)                │
+│  Space : Toggle selection (in multi-select)                 │
 
-│  Tab : Move between form fields                            │
+│  Tab : Move between form fields                             │
 
-│  Ctrl+C : Cancel/Exit                                      │
+│  Ctrl+C : Cancel/Exit                                       │
 
-│  F1 : Help                                                 │
+│  F1 : Help                                                  │
 
 │                                                             │
 
-│  Color Guide:                                              │
+│  Color Guide:                                               │
 
-│    • Green : Success/Confirmation                          │
+│    • Green : Success/Confirmation                           │
 
-│    • Yellow : Warning/Attention needed                     │
+│    • Yellow : Warning/Attention needed                      │
 
-│    • Red : Error/Critical                                  │
+│    • Red : Error/Critical                                   │
 
-│    • Cyan : Information/Headers                            │
+│    • Cyan : Information/Headers                             │
 
-│    • Blue : Active selection                               │
+│    • Blue : Active selection                                │
 
 │                                                             │
 
@@ -648,17 +636,17 @@ When you apply history tracking to a table like `employees`, here's what gets cr
 
 CREATE TABLE employees (
 
-&nbsp;   id SERIAL PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
 
-&nbsp;   name VARCHAR(100) NOT NULL,
+   name VARCHAR(100) NOT NULL,
 
-&nbsp;   email VARCHAR(255) UNIQUE,
+   email VARCHAR(255) UNIQUE,
 
-&nbsp;   department VARCHAR(50),
+   department VARCHAR(50),
 
-&nbsp;   salary DECIMAL(10,2),
+   salary DECIMAL(10,2),
 
-&nbsp;   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 );
 
@@ -682,35 +670,35 @@ CREATE TABLE employees (
 
 CREATE TABLE employees_hst (
 
-&nbsp;   -- All original columns preserved
+   -- All original columns preserved
 
-&nbsp;   id INTEGER NOT NULL,
+   id INTEGER NOT NULL,
 
-&nbsp;   name VARCHAR(100) NOT NULL,
+   name VARCHAR(100) NOT NULL,
 
-&nbsp;   email VARCHAR(255),
+   email VARCHAR(255),
 
-&nbsp;   department VARCHAR(50),
+   department VARCHAR(50),
 
-&nbsp;   salary DECIMAL(10,2),
+   salary DECIMAL(10,2),
 
-&nbsp;   created_at TIMESTAMP,
+   created_at TIMESTAMP,
 
-&nbsp;   
+   
 
-&nbsp;   -- Added history metadata
+   -- Added history metadata
 
-&nbsp;   history_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   history_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-&nbsp;   history_operation VARCHAR(10),  -- 'UPDATE' or 'DELETE'
+   history_operation VARCHAR(10),  -- 'UPDATE' or 'DELETE'
 
-&nbsp;   history_user VARCHAR(100),      -- User who made the change
+   history_user VARCHAR(100),      -- User who made the change
 
-&nbsp;   
+   
 
-&nbsp;   -- Composite primary key
+   -- Composite primary key
 
-&nbsp;   PRIMARY KEY (id, history_timestamp)
+   PRIMARY KEY (id, history_timestamp)
 
 );
 
@@ -746,37 +734,37 @@ RETURNS TRIGGER AS $$
 
 BEGIN
 
-&nbsp;   IF (TG_OP = 'DELETE') THEN
+   IF (TG_OP = 'DELETE') THEN
 
-&nbsp;       INSERT INTO employees_hst
+       INSERT INTO employees_hst
 
-&nbsp;       SELECT OLD.*, 
+       SELECT OLD.*, 
 
-&nbsp;              CURRENT_TIMESTAMP, 
+              CURRENT_TIMESTAMP, 
 
-&nbsp;              'DELETE', 
+              'DELETE', 
 
-&nbsp;              CURRENT_USER;
+              CURRENT_USER;
 
-&nbsp;       RETURN OLD;
+       RETURN OLD;
 
-&nbsp;   ELSIF (TG_OP = 'UPDATE') THEN
+   ELSIF (TG_OP = 'UPDATE') THEN
 
-&nbsp;       INSERT INTO employees_hst
+       INSERT INTO employees_hst
 
-&nbsp;       SELECT OLD.*, 
+       SELECT OLD.*, 
 
-&nbsp;              CURRENT_TIMESTAMP, 
+              CURRENT_TIMESTAMP, 
 
-&nbsp;              'UPDATE', 
+              'UPDATE', 
 
-&nbsp;              CURRENT_USER;
+              CURRENT_USER;
 
-&nbsp;       RETURN NEW;
+       RETURN NEW;
 
-&nbsp;   END IF;
+   END IF;
 
-&nbsp;   RETURN NULL;
+   RETURN NULL;
 
 END;
 
@@ -898,47 +886,47 @@ version: '3.8'
 
 services:
 
-&nbsp; history-generator:
+ history-generator:
 
-&nbsp;   build: .
+   build: .
 
-&nbsp;   environment:
+   environment:
 
-&nbsp;     - DB_HOST=postgres
+     - DB_HOST=postgres
 
-&nbsp;     - DB_PORT=5432
+     - DB_PORT=5432
 
-&nbsp;   depends_on:
+   depends_on:
 
-&nbsp;     - postgres
+     - postgres
 
-&nbsp;   volumes:
+   volumes:
 
-&nbsp;     - ./config:/app/config
+     - ./config:/app/config
 
-&nbsp;     - ./backups:/app/backups
+     - ./backups:/app/backups
 
-&nbsp;     - ./logs:/app/logs
+     - ./logs:/app/logs
 
-&nbsp; 
+ 
 
-&nbsp; postgres:
+ postgres:
 
-&nbsp;   image: postgres:15
+   image: postgres:15
 
-&nbsp;   environment:
+   environment:
 
-&nbsp;     POSTGRES_PASSWORD: example
+     POSTGRES_PASSWORD: example
 
-&nbsp;   volumes:
+   volumes:
 
-&nbsp;     - postgres_data:/var/lib/postgresql/data
+     - postgres_data:/var/lib/postgresql/data
 
 
 
 volumes:
 
-&nbsp; postgres_data:
+ postgres_data:
 
 ```
 
@@ -996,15 +984,15 @@ docker-compose up
 
 class NewDatabase(BaseDatabase):
 
-&nbsp;   def connect(self):
+   def connect(self):
 
-&nbsp;       # Implementation
+       # Implementation
 
-&nbsp;   
+   
 
-&nbsp;   def get_tables(self, schema):
+   def get_tables(self, schema):
 
-&nbsp;       # Implementation
+       # Implementation
 
 ```
 
@@ -1016,9 +1004,9 @@ class NewDatabase(BaseDatabase):
 
 class NewDBTriggerGenerator(BaseTriggerGenerator):
 
-&nbsp;   def generate_history_table_ddl(self):
+   def generate_history_table_ddl(self):
 
-&nbsp;       # Database-specific DDL
+       # Database-specific DDL
 
 ```
 
@@ -1032,7 +1020,7 @@ class NewDBTriggerGenerator(BaseTriggerGenerator):
 
 if db_type == 'newdb':
 
-&nbsp;   return NewDatabase(config, ui)
+   return NewDatabase(config, ui)
 
 ```
 
@@ -1203,12 +1191,13 @@ mypy .
 ## 👥 Authors
 
 
+- **Kennny** - Creator & Maintainer - [@Kennny7](https://github.com/Kennny7)
 
-- **Your Name** - *Initial work* - [@yourusername](https://github.com/yourusername)
+## 🤝 Contributors
 
-- **Contributors** - [See contributors](https://github.com/yourusername/history-table-generator/graphs/contributors)
-
-
+Currently maintained solely by the author.  
+Future contributors are welcome — see the GitHub contributors page:
+[See contributors](https://github.com/yourusername/history-table-generator/graphs/contributors)
 
 ## 📄 License
 
@@ -1244,11 +1233,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/history-table-generator&type=Date)](https://star-history.com/#yourusername/history-table-generator&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Kennny7/history-table-generator&type=Date)](https://star-history.com/#Kennny7/history-table-generator&Date)
 
 
-
-**"The palest ink is better than the best memory."** - Chinese Proverb
+**"What is not documented is not done."** - An Engineering Maxim
 
 
 
