@@ -118,7 +118,7 @@ python -m venv venv
 
 # On Windows:
 
-venvScriptsactivate
+venv\Scripts\activate
 
 # On macOS/Linux:
 
