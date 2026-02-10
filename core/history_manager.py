@@ -5,6 +5,9 @@ Main history table management logic
 import json
 from typing import List, Dict, Any, Optional
 from datetime import datetime
+from rich.panel import Panel
+from rich.table import Table
+from rich.progress import Progress
 from .trigger_generator import TriggerGenerator
 from utils.logger import get_logger
 
@@ -114,7 +117,7 @@ class HistoryManager:
             
             if self.ui.confirm_action("Rollback all changes?", default=False):
                 # Execute rollback queries
-                pass
+                self._execute_rollback()
                 
         except Exception as e:
             self.logger.error(f"Rollback failed: {str(e)}")
@@ -158,49 +161,85 @@ class HistoryManager:
         """Display preview of changes"""
         self.ui.display_header("Preview Changes")
         
-        for table_name in tables:
+        self.ui.console.print(f"[bold cyan]Previewing history tables for {len(tables)} table(s) in schema '{schema}'[/bold cyan]\n")
+        
+        for idx, table_name in enumerate(tables, 1):
             # Generate preview SQL
             columns = self.database.get_table_columns(schema, table_name)
+            
+            self.ui.console.print(f"[bold yellow]Table {idx}/{len(tables)}: {schema}.{table_name}[/bold yellow]")
+            
+            # Show original table info
+            self.ui.console.print(f"[dim]Original table has {len(columns)} columns[/dim]")
+            
+            # Get history table DDL
             history_table_ddl = self.trigger_gen.generate_history_table_ddl(
                 schema, table_name, columns, self.config.get('app', {})
             )
+            
+            # Get trigger DDL
             trigger_ddl = self.trigger_gen.generate_trigger_ddl(
                 schema, table_name, self.config.get('app', {})
             )
             
-            # Display in panels
+            # Display history table DDL in panel
             self.ui.console.print(Panel(
                 history_table_ddl,
                 title=f"[bold]History Table: {table_name}[/bold]",
                 border_style="cyan"
             ))
             
+            # Display each trigger DDL in panel
             for i, trigger in enumerate(trigger_ddl, 1):
                 self.ui.console.print(Panel(
                     trigger,
-                    title=f"[bold]Trigger {i}[/bold]",
+                    title=f"[bold]Trigger {i} for {table_name}[/bold]",
                     border_style="yellow"
                 ))
+            
+            # Add separator between tables (except for last one)
+            if idx < len(tables):
+                self.ui.console.print("\n" + "─" * 80 + "\n")
     
     def _create_backup(self, tables: List[str], schema: str):
         """Create backup of original tables"""
         backup_file = f"backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.sql"
         
+        self.logger.info(f"Creating backup to {backup_file}")
+        
+        backup_queries = []
+        
         with Progress() as progress:
             task = progress.add_task("[cyan]Creating backup...", total=len(tables))
             
-            backup_queries = []
             for table in tables:
-                backup_queries.append(
-                    self.trigger_gen.generate_backup_ddl(schema, table)
-                )
-                progress.update(task, advance=1)
+                try:
+                    backup_query = self.trigger_gen.generate_backup_ddl(schema, table)
+                    backup_queries.append(backup_query)
+                    progress.update(task, advance=1)
+                except Exception as e:
+                    self.logger.error(f"Failed to generate backup for table {table}: {str(e)}")
         
         # Save to file
-        with open(backup_file, 'w') as f:
-            f.write('\n'.join(backup_queries))
-        
-        self.logger.info(f"Backup saved to {backup_file}")
+        try:
+            with open(backup_file, 'w') as f:
+                f.write('\n'.join(backup_queries))
+            
+            self.logger.info(f"Backup saved to {backup_file}")
+            self.ui.display_message(f"Backup created successfully: {backup_file}", "info")
+        except Exception as e:
+            self.logger.error(f"Failed to save backup file: {str(e)}")
+            self.ui.display_error(f"Failed to save backup: {str(e)}")
+    
+    def _execute_rollback(self):
+        """Execute rollback of applied changes"""
+        try:
+            # This should contain the logic to rollback changes
+            # For now, we'll just show a message
+            self.ui.display_message("Rollback functionality will be implemented in the next version", "warning")
+        except Exception as e:
+            self.logger.error(f"Rollback execution failed: {str(e)}")
+            raise
     
     def _log_change(self, schema: str, table: str, action: str):
         """Log applied change"""

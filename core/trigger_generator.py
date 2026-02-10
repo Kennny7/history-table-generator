@@ -53,14 +53,24 @@ class PostgreSQLTriggerGenerator(BaseTriggerGenerator):
         column_defs.append(f"{config.get('user_column', 'history_user')} VARCHAR(100)")
         
         # Generate DDL
-        ddl = f"""
-CREATE TABLE IF NOT EXISTS {schema}.{history_table} (
-    {',\n    '.join(column_defs)},
-    PRIMARY KEY ({columns[0]['column_name']}, {config.get('timestamp_column', 'history_timestamp')})
-);
+        column_list = ",\n    ".join(column_defs)
 
-COMMENT ON TABLE {schema}.{history_table} IS 'History table for {schema}.{table_name}';
-        """
+        ddl = (
+            "CREATE TABLE IF NOT EXISTS {schema}.{history_table} (\n"
+            "    {column_list},\n"
+            "    PRIMARY KEY ({pk_col}, {ts_col})\n"
+            ");\n\n"
+            "COMMENT ON TABLE {schema}.{history_table} "
+            "IS 'History table for {schema}.{table_name}';"
+        ).format(
+            schema=schema,
+            history_table=history_table,
+            column_list=column_list,
+            pk_col=columns[0]['column_name'],
+            ts_col=config.get('timestamp_column', 'history_timestamp'),
+            table_name=table_name
+        )
+
         
         return ddl.strip()
     
@@ -93,7 +103,8 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
         """
-        
+
+
         create_trigger = f"""
 CREATE TRIGGER {table_name}_history_trigger
 AFTER UPDATE OR DELETE ON {schema}.{table_name}
