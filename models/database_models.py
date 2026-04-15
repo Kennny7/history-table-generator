@@ -193,14 +193,31 @@ class HistoryTableDefinition(TableDefinition):
     """History table definition (extends TableDefinition)"""
     original_table: str
     history_suffix: str = "_hst"
+    hist_id_column: str = "hist_id"
+    hist_id_sequence_suffix: str = "_hist_id_seq"
     timestamp_column: str = "history_timestamp"
     operation_column: str = "history_operation"
     user_column: str = "history_user"
     
+
     def __post_init__(self):
         """Add history-specific columns after initialization"""
-        # Add history columns if not already present
+
+        # Generate unique sequence name per history table
+        sequence_name = f"{self.name}{self.hist_id_sequence_suffix}"
+
+        # History ID column (PRIMARY KEY)
+        hist_id_col = ColumnDefinition(
+            name=self.hist_id_column,
+            data_type="BIGINT",
+            is_nullable=False,
+            is_primary_key=True,
+            default_value=f"nextval('{self.schema_name}.{sequence_name}')"
+        )
+
+        # Standard history columns
         history_columns = [
+            hist_id_col,
             ColumnDefinition(
                 name=self.timestamp_column,
                 data_type="TIMESTAMP",
@@ -215,12 +232,17 @@ class HistoryTableDefinition(TableDefinition):
                 data_type="VARCHAR(100)"
             )
         ]
-        
-        # Check if history columns already exist
+
+        # Avoid duplicates
         existing_names = {col.name for col in self.columns}
+
         for hcol in history_columns:
             if hcol.name not in existing_names:
                 self.columns.append(hcol)
+
+        # Ensure hist_id is in primary keys
+        if self.hist_id_column not in self.primary_keys:
+            self.primary_keys.insert(0, self.hist_id_column)
 
 @dataclass
 class TriggerDefinition:

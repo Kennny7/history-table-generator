@@ -126,19 +126,23 @@ class HistoryManager:
     def _create_history_table(self, table_name: str, schema: str):
         """Create history table for given table"""
         app_config = self.config.get('app', {})
-        
-        # Get original table structure
+
         columns = self.database.get_table_columns(schema, table_name)
-        
-        # Build history table creation query
-        query = self.trigger_gen.generate_history_table_ddl(
+
+        # 1. Create sequence FIRST
+        sequence_query = self.trigger_gen.generate_sequence_ddl(
+            schema, table_name, app_config
+        )
+        self.database.execute_query(sequence_query)
+
+        self._log_change(schema, table_name, "CREATE_SEQUENCE")
+
+        # 2. Create table
+        table_query = self.trigger_gen.generate_history_table_ddl(
             schema, table_name, columns, app_config
         )
-        
-        # Execute query
-        self.database.execute_query(query)
-        
-        # Log change
+        self.database.execute_query(table_query)
+
         self._log_change(schema, table_name, "CREATE_HISTORY_TABLE")
     
     def _create_triggers(self, table_name: str, schema: str):
@@ -161,35 +165,58 @@ class HistoryManager:
         """Display preview of changes"""
         self.ui.display_header("Preview Changes")
         
-        self.ui.console.print(f"[bold cyan]Previewing history tables for {len(tables)} table(s) in schema '{schema}'[/bold cyan]\n")
+        self.ui.console.print(
+            f"[bold cyan]Previewing history tables for {len(tables)} table(s) in schema '{schema}'[/bold cyan]\n"
+        )
         
         for idx, table_name in enumerate(tables, 1):
             # Generate preview SQL
             columns = self.database.get_table_columns(schema, table_name)
             
-            self.ui.console.print(f"[bold yellow]Table {idx}/{len(tables)}: {schema}.{table_name}[/bold yellow]")
+            self.ui.console.print(
+                f"[bold yellow]Table {idx}/{len(tables)}: {schema}.{table_name}[/bold yellow]"
+            )
             
             # Show original table info
             self.ui.console.print(f"[dim]Original table has {len(columns)} columns[/dim]")
             
+            app_config = self.config.get('app', {})
+
+            # Get sequence DDL (safe access via generator)
+            try:
+                sequence_ddl = self.trigger_gen.generate_sequence_ddl(
+                    schema, table_name, app_config
+                )
+            except AttributeError:
+                # Backward compatibility (if method not yet added)
+                sequence_ddl = None
+
             # Get history table DDL
             history_table_ddl = self.trigger_gen.generate_history_table_ddl(
-                schema, table_name, columns, self.config.get('app', {})
+                schema, table_name, columns, app_config
             )
             
             # Get trigger DDL
             trigger_ddl = self.trigger_gen.generate_trigger_ddl(
-                schema, table_name, self.config.get('app', {})
+                schema, table_name, app_config
             )
+
+            # Display sequence FIRST (only if available)
+            if sequence_ddl:
+                self.ui.console.print(Panel(
+                    sequence_ddl,
+                    title=f"[bold]Sequence: {table_name}[/bold]",
+                    border_style="magenta"
+                ))
             
-            # Display history table DDL in panel
+            # Display history table DDL
             self.ui.console.print(Panel(
                 history_table_ddl,
                 title=f"[bold]History Table: {table_name}[/bold]",
                 border_style="cyan"
             ))
             
-            # Display each trigger DDL in panel
+            # Display triggers
             for i, trigger in enumerate(trigger_ddl, 1):
                 self.ui.console.print(Panel(
                     trigger,
@@ -197,7 +224,7 @@ class HistoryManager:
                     border_style="yellow"
                 ))
             
-            # Add separator between tables (except for last one)
+            # Separator
             if idx < len(tables):
                 self.ui.console.print("\n" + "─" * 80 + "\n")
     
