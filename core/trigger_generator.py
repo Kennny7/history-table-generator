@@ -142,7 +142,7 @@ $$ LANGUAGE plpgsql;
 
         create_trigger = f"""
 CREATE TRIGGER {table_name}_history_trigger
-AFTER UPDATE OR DELETE ON {schema}.{table_name}
+BEFORE UPDATE OR DELETE ON {schema}.{table_name}
 FOR EACH ROW
 EXECUTE FUNCTION {schema}.{table_name}_history_trigger();
         """
