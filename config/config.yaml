@@ -1,0 +1,18 @@
+app:
+  auto_commit: false
+  backup_before_changes: true
+  default_schema: public
+  history_suffix: _hst
+  include_system_tables: false
+  include_views: false
+  max_retries: 3
+  operation_column: history_operation
+  retry_delay: 2
+  timestamp_column: history_timestamp
+  user_column: history_user
+database: {}
+logging:
+  backup_count: 5
+  file: logs/history_generator.log
+  level: INFO
+  max_size_mb: 10
